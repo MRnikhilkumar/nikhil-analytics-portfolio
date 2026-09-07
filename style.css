@@ -4014,3 +4014,467 @@ p {
 footer p {
     font-size: 15px;
 }
+/* =========================================
+   EXPERIENCE CARDS — SAME BASE COLOR
+   ========================================= */
+
+.experience-card {
+    background: #101720 !important;
+    border: 1px solid rgba(0, 217, 255, 0.18) !important;
+}
+
+.experience-card:hover {
+    background: #101720 !important;
+    border-color: rgba(0, 217, 255, 0.65) !important;
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.12);
+}
+
+
+
+/* =========================================================
+   NKS — EXTREME PREMIUM ANIMATION PACK
+   ========================================================= */
+
+/* ---------- GLOBAL SMOOTHNESS ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ---------- HERO MOVING GLOW ---------- */
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hero::before {
+    width: 550px;
+    height: 550px;
+    top: -220px;
+    right: -160px;
+    background: radial-gradient(
+        circle,
+        rgba(0, 217, 255, 0.20),
+        rgba(0, 217, 255, 0.05) 40%,
+        transparent 70%
+    );
+    animation: orbitGlow 8s ease-in-out infinite alternate;
+}
+
+.hero::after {
+    width: 400px;
+    height: 400px;
+    bottom: -200px;
+    left: -120px;
+    background: radial-gradient(
+        circle,
+        rgba(70, 100, 255, 0.15),
+        transparent 70%
+    );
+    animation: orbitGlow2 10s ease-in-out infinite alternate;
+}
+
+@keyframes orbitGlow {
+    0% {
+        transform: translate(0, 0) scale(0.9);
+    }
+    100% {
+        transform: translate(-100px, 100px) scale(1.3);
+    }
+}
+
+@keyframes orbitGlow2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(100px, -80px) scale(1.25);
+    }
+}
+
+
+/* ---------- HERO TEXT ---------- */
+.hero h1 span {
+    display: block;
+    animation: cinematicText 1s both;
+}
+
+.hero h1 span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.hero > * {
+    animation: heroEntrance 0.9s both;
+}
+
+@keyframes cinematicText {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+        filter: blur(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes heroEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- PROFILE PHOTO ---------- */
+.profile-ring {
+    animation: profileFloat 5s ease-in-out infinite;
+}
+
+.profile-ring::before,
+.profile-ring::after {
+    animation: ringRotate 7s linear infinite;
+}
+
+@keyframes profileFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes ringRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ---------- AVAILABILITY DOT ---------- */
+.status-dot,
+.availability-badge span {
+    animation: statusPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 217, 255, 0);
+    }
+    50% {
+        transform: scale(1.5);
+        box-shadow: 0 0 18px rgba(0, 217, 255, 0.8);
+    }
+}
+
+
+/* ---------- BUTTONS ---------- */
+.btn,
+.dashboard-btn,
+.about-resume,
+.about-contact,
+.resume-btn {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.btn::before,
+.dashboard-btn::before,
+.about-resume::before,
+.about-contact::before,
+.resume-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.25),
+        transparent
+    );
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+}
+
+.btn:hover::before,
+.dashboard-btn:hover::before,
+.about-resume:hover::before,
+.about-contact:hover::before,
+.resume-btn:hover::before {
+    left: 140%;
+}
+
+.btn:hover,
+.dashboard-btn:hover,
+.about-resume:hover,
+.about-contact:hover,
+.resume-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow:
+        0 10px 35px rgba(0, 217, 255, 0.20),
+        0 0 20px rgba(0, 217, 255, 0.10);
+}
+
+
+/* ---------- SKILL CARDS ---------- */
+.skill-card {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.skill-card::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 217, 255, 0.08),
+        transparent
+    );
+    transition: top 0.7s ease;
+}
+
+.skill-card:hover::after {
+    top: 120%;
+}
+
+.skill-card:hover {
+    transform: translateY(-12px) rotateX(3deg);
+    border-color: rgba(0, 217, 255, 0.7);
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.3),
+        0 0 30px rgba(0,217,255,0.12);
+}
+
+
+/* ---------- SKILL CHIPS ---------- */
+.chips span,
+.about-skills span {
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.chips span:hover,
+.about-skills span:hover {
+    transform: translateY(-4px) scale(1.05);
+    border-color: rgba(0, 217, 255, 0.7);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.15);
+}
+
+
+/* ---------- EXPERIENCE TIMELINE ---------- */
+.timeline::before {
+    animation: none !important;
+}
+
+.experience-card {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+}
+
+.experience-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -110%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00d9ff,
+        transparent
+    );
+    transition: left 0.7s ease;
+}
+
+.experience-card:hover::after {
+    left: 130%;
+}
+
+.experience-card:hover {
+    transform: translateX(8px);
+    border-color: rgba(0, 217, 255, 0.7);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.3),
+        0 0 25px rgba(0,217,255,0.12);
+}
+
+
+/* ---------- PROJECT CARDS ---------- */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-14px) scale(1.015);
+    border-color: rgba(0, 217, 255, 0.7);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.35),
+        0 0 35px rgba(0,217,255,0.13);
+}
+
+.project-card .dashboard-preview {
+    overflow: hidden;
+    position: relative;
+}
+
+.project-card .dashboard-preview img {
+    transition:
+        transform 0.8s ease,
+        filter 0.8s ease;
+}
+
+.project-card:hover .dashboard-preview img {
+    transform: scale(1.09);
+    filter: brightness(1.08);
+}
+
+.project-card .dashboard-preview::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -130%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.20),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.8s ease;
+}
+
+.project-card:hover .dashboard-preview::after {
+    left: 140%;
+}
+
+
+/* ---------- CERTIFICATION CARDS ---------- */
+#certifications .card {
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+#certifications .card:hover {
+    transform: translateY(-10px) rotateX(2deg);
+    border-color: rgba(0,217,255,0.6);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.3),
+        0 0 25px rgba(0,217,255,0.1);
+}
+
+
+/* ---------- CONTACT ---------- */
+.contact-box {
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0,217,255,0.5);
+    box-shadow: 0 0 40px rgba(0,217,255,0.1);
+}
+
+
+/* ---------- INPUT FOCUS ---------- */
+.contact-form input,
+.contact-form textarea {
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    transform: translateY(-2px);
+    border-color: rgba(0,217,255,0.7);
+    box-shadow:
+        0 0 20px rgba(0,217,255,0.10),
+        inset 0 0 15px rgba(0,217,255,0.03);
+}
+
+
+/* ---------- FOOTER LINKS ---------- */
+.footer-links a {
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+.footer-links a:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 0 15px rgba(0,217,255,0.6);
+}
+
+
+/* ---------- REDUCED MOTION SAFETY ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
